@@ -7,7 +7,7 @@ jobs:
   ubuntu:
     runs-on: ubuntu-latest
 	steps:
-	- run: !
+	  - run: !
 	    echo Ubuntu
 	    date
 
@@ -15,7 +15,7 @@ jobs:
 
     runs-on: windows-latest
 	steps:
-	- run: !
+	  - run: !
 	    echo Windows
 	    date
 	
@@ -23,7 +23,7 @@ jobs:
   macos:
     runs-on: macos-latest
 	steps:
-	- run: !
+	  - run: !
 	    echo MacOS
 	    date
 	
@@ -31,5 +31,5 @@ jobs:
     needs: [ubuntu, windows, macos]
 	runs-on: 
 	steps:
-	- run: echo Hello Everyone!	
+	  - run: echo Hello Everyone!	
 
