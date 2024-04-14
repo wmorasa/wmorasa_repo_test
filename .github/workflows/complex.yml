@@ -8,18 +8,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Say Ubuntu
-        run: date
+        run: echo Ubuntu
 
   windows:
     name: Windows Check
     runs-on: windows-latest
     steps:
       - name: Say Windows
-        run: date
+        run: echo Windows
 
   macos:
     name: MacOS Check
     runs-on: macos-latest
     steps:
       - name: Say MacOS
-        run: date
+        run: echo MacOS
