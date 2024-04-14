@@ -7,5 +7,5 @@ jobs:
     name: Ubuntu Check
     runs-on: ubuntu-latest
     steps:
-	  - name: Say Ubuntu
-	    run: date
+      - name: Say Ubuntu
+        run: date
