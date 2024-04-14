@@ -8,6 +8,7 @@ jobs:
     name: Ubuntu
     runs-on: ubuntu-latest
 	steps:
-	  - run: !
-	    echo Ubuntu
-	    date
+	  - name: Say Ubuntu
+	    run: !
+	      echo Ubuntu
+	      date
