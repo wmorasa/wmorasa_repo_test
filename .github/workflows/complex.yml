@@ -23,3 +23,10 @@ jobs:
     steps:
       - name: Say MacOS
         run: echo MacOS
+
+  depends:
+    needs: [ubuntu, windows, macos]
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo Hello Everyone!
+      - run: date
