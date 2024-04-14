@@ -1,0 +1,32 @@
+name: Tag Branch
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  tag_branch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Get branch name
+        id: branch_name
+        run: echo "::set-output name=branch::${GITHUB_REF#refs/heads/}"
+
+      - name: Get latest tag
+        id: latest_tag
+        run: echo "::set-output name=tag::$(git describe --tags --abbrev=0)"
+
+      - name: Increment version number
+        id: increment_version
+        run: echo "::set-output name=version::$(node -e 'console.log((process.env.INPUT_TAG || process.env.OUTPUT_TAG).replace(/^v(\\d+)(\\.(\\d+))?(\\.(\\d+))?.*$/, (_, v, _, m, _, p) => "v" + v + "." + (m || 0) + "." + (p || 0) + "." + (parseInt(p || 0) + 1))')"
+
+      - name: Create tag
+        id: create_tag
+        if: steps.increment_version.outputs.version != steps.latest_tag.outputs.tag
+        run: |
+          git tag ${{ steps.increment_version.outputs.version }}
+          git push --tags
