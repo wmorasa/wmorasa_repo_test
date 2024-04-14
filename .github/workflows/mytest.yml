@@ -1,26 +1,10 @@
-name: Complex
+name: Hello World
 on:
-  workflow_dispatch:
+  workflow_run:
 
 jobs:
-  ubuntu:
-    name: Ubuntu Check
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Say Ubuntu
-        run: echo Ubuntu
-        run: date
-
-  windows:
-    name: Windows Check
-    runs-on: windows-latest
-    steps:
-      - name: Say Windows
-        run: date
-
-  macos:
-    name: MacOS Check
-    runs-on: macos-latest
-    steps:
-      - name: Say MacOS
-        run: date
+    - name: Say Hello
+      run: echo "Hello, world!"
