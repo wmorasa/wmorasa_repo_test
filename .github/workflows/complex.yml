@@ -25,8 +25,11 @@ jobs:
         run: echo MacOS
 
   depends:
+    name: Depends Step
     needs: [ubuntu, windows, macos]
     runs-on: ubuntu-latest
     steps:
       - run: echo Hello Everyone!
       - run: date
+      - run: df -h
+
