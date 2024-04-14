@@ -8,8 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Say Ubuntu
-        run: echo Ubuntu
-        run: date
+      - run: echo Ubuntu
+      - run: date
 
   windows:
     name: Windows Check
