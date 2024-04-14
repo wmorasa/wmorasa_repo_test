@@ -1,11 +1,11 @@
-name: Hello World
+name: Complex
 on:
   workflow_dispatch:
 
 jobs:
   Ubuntu:
-    name: Hello World
+    name: Ubuntu Check
     runs-on: ubuntu-latest
     steps:
-      - name: Say Hello
-        run: echo "Hello, World!"
+	  - name: Say Ubuntu
+	    run: date
