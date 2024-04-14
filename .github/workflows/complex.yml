@@ -8,7 +8,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Say Ubuntu
-        run: date
+        run: !
+          echo Ubuntu
+          date
 
   windows:
     name: Windows Check
@@ -23,3 +25,15 @@ jobs:
     steps:
       - name: Say MacOS
         run: date
+		
+name: Hello World
+on:
+  workflow_dispatch:
+
+jobs:
+  Ubuntu:
+    name: Hello World
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say Hello
+        run: echo "Hello, World!"
