@@ -5,31 +5,9 @@ on:
 
 jobs:
   ubuntu:
+    name: Ubuntu
     runs-on: ubuntu-latest
 	steps:
 	  - run: !
 	    echo Ubuntu
 	    date
-
-  windows:
-
-    runs-on: windows-latest
-	steps:
-	  - run: !
-	    echo Windows
-	    date
-	
-	
-  macos:
-    runs-on: macos-latest
-	steps:
-	  - run: !
-	    echo MacOS
-	    date
-	
-  depends:
-    needs: [ubuntu, windows, macos]
-	runs-on: 
-	steps:
-	  - run: echo Hello Everyone!	
-
